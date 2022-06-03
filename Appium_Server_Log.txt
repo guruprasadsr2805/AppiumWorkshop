@@ -1,0 +1,18 @@
+2022-06-02 11:20:34:891 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (internal/stream_base_commons.js:156:25)
+    at writeGeneric (internal/stream_base_commons.js:147:3)
+    at Socket._writeGeneric (net.js:787:11)
+    at Socket._write (net.js:799:8)
+    at doWrite (_stream_writable.js:403:12)
+    at writeOrBuffer (_stream_writable.js:387:5)
+    at Socket.Writable.write (_stream_writable.js:318:11)
+    at Async.fatalError (/usr/local/lib/node_modules/appium/node_modules/bluebird/js/release/async.js:38:24)
+    at Promise._reject (/usr/local/lib/node_modules/appium/node_modules/bluebird/js/release/promise.js:688:22)
+    at Promise._settlePromise (/usr/local/lib/node_modules/appium/node_modules/bluebird/js/release/promise.js:619:21)
+    at Promise._settlePromise0 (/usr/local/lib/node_modules/appium/node_modules/bluebird/js/release/promise.js:649:10)
+    at Promise._settlePromises (/usr/local/lib/node_modules/appium/node_modules/bluebird/js/release/promise.js:725:18)
+    at _drainQueueStep (/usr/local/lib/node_modules/appium/node_modules/bluebird/js/release/async.js:93:12)
+    at _drainQueue (/usr/local/lib/node_modules/appium/node_modules/bluebird/js/release/async.js:86:9)
+    at Async._drainQueues (/usr/local/lib/node_modules/appium/node_modules/bluebird/js/release/async.js:102:5)
+    at Immediate.Async.drainQueues (/usr/local/lib/node_modules/appium/node_modules/bluebird/js/release/async.js:15:14)
