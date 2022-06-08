@@ -28,7 +28,8 @@ public class EmulatorHybridAppTest {
             capabilities.setCapability("appium:adbExecTimeout", 70000);
             capabilities.setCapability("appium:automationName", "UiAutomator2");
             capabilities.setCapability("appium:autoGrantPermissions", true);
-            capabilities.setCapability("appium:app", System.getProperty("user.dir") + "/Apps/TheApp-v1.10.0.apk");
+            //capabilities.setCapability("appium:app", System.getProperty("user.dir") + "/Apps/TheApp-v1.10.0.apk");
+            capabilities.setCapability("appium:app", "https://github.com/cloudgrey-io/the-app/releases/download/v1.10.0/TheApp-v1.10.0.apk");
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), capabilities);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         } catch (Exception e) {

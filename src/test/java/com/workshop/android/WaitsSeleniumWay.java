@@ -1,6 +1,7 @@
 package com.workshop.android;
 
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.Setting;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
@@ -68,6 +69,7 @@ public class WaitsSeleniumWay {
             capabilities.setCapability("appium:autoGrantPermissions", true);
             capabilities.setCapability("appium:app", APP_URL);
             driver = new AndroidDriver(service.getUrl(), capabilities);
+            driver.setSetting(Setting.KEY_INJECTION_DELAY, 500);
         } catch (Exception e) {
 
         }

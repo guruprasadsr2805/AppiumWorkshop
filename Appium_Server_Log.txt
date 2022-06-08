@@ -1,18 +1,123 @@
-2022-06-07 14:20:50:490 [Appium] Welcome to Appium v2.0.0-beta.27
-2022-06-07 14:20:50:492 [Appium] Non-default server args:
-2022-06-07 14:20:50:494 [Appium] { loglevel: 'info', port: 55819 }
-2022-06-07 14:20:50:495 [Appium] Attempting to load driver uiautomator2...
-2022-06-07 14:20:51:881 [Appium] Attempting to load driver xcuitest...
-2022-06-07 14:20:53:403 [Appium] Appium REST http interface listener started on 0.0.0.0:55819
-2022-06-07 14:20:53:403 [Appium] Available drivers:
-2022-06-07 14:20:53:404 [Appium]   - uiautomator2@2.2.0 (automationName 'UiAutomator2')
-2022-06-07 14:20:53:404 [Appium]   - xcuitest@4.4.2 (automationName 'XCUITest')
-2022-06-07 14:20:53:404 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
-2022-06-07 14:20:53:587 [HTTP] --> GET /status
-2022-06-07 14:20:53:588 [HTTP] {}
-2022-06-07 14:20:53:595 [HTTP] <-- GET /status 200 7 ms - 47
-2022-06-07 14:20:53:596 [HTTP] 
-2022-06-07 14:20:53:601 [HTTP] --> GET /status
-2022-06-07 14:20:53:601 [HTTP] {}
-2022-06-07 14:20:53:603 [HTTP] <-- GET /status 200 1 ms - 47
-2022-06-07 14:20:53:603 [HTTP] 
+2022-06-08 17:03:00:095 [Appium] Welcome to Appium v2.0.0-beta.27
+2022-06-08 17:03:00:097 [Appium] Non-default server args:
+2022-06-08 17:03:00:098 [Appium] { loglevel: 'info' }
+2022-06-08 17:03:00:099 [Appium] Attempting to load driver uiautomator2...
+2022-06-08 17:03:01:149 [Appium] Attempting to load driver xcuitest...
+2022-06-08 17:03:02:183 [Appium] Appium REST http interface listener started on 0.0.0.0:4723
+2022-06-08 17:03:02:183 [Appium] Available drivers:
+2022-06-08 17:03:02:183 [Appium]   - uiautomator2@2.2.0 (automationName 'UiAutomator2')
+2022-06-08 17:03:02:184 [Appium]   - xcuitest@4.4.2 (automationName 'XCUITest')
+2022-06-08 17:03:02:184 [Appium] Available plugins:
+2022-06-08 17:03:02:184 [Appium]   - element-wait@1.0.0-beta.7
+2022-06-08 17:03:02:184 [Appium] No plugins activated. Use the --use-plugins flag with names of plugins to activate
+2022-06-08 17:03:02:267 [HTTP] --> GET /status
+2022-06-08 17:03:02:267 [HTTP] {}
+2022-06-08 17:03:02:277 [HTTP] <-- GET /status 200 9 ms - 47
+2022-06-08 17:03:02:277 [HTTP] 
+2022-06-08 17:03:02:281 [HTTP] --> GET /status
+2022-06-08 17:03:02:281 [HTTP] {}
+2022-06-08 17:03:02:284 [HTTP] <-- GET /status 200 1 ms - 47
+2022-06-08 17:03:02:285 [HTTP] 
+2022-06-08 17:03:08:033 [HTTP] --> POST /session
+2022-06-08 17:03:08:033 [HTTP] {"capabilities":{"firstMatch":[{}],"alwaysMatch":{"appium:adbExecTimeout":900000,"appium:app":"/Users/guruprasadsreenivasarao/Documents/OldDesktop/DDrive/AppiumWorkshop/AppiumWorkshop/Apps/VodQA.apk","appium:autoGrantPermissions":true,"appium:automationName":"UIAutomator2","appium:newCommandTimeout":900,"platformName":"android"}}}
+2022-06-08 17:03:08:037 [Appium] Attempting to find matching driver for automationName 'UIAutomator2' and platformName 'android'
+2022-06-08 17:03:08:037 [Appium] The 'uiautomator2' driver was installed and matched caps.
+2022-06-08 17:03:08:038 [Appium] Will require it at /Users/guruprasadsreenivasarao/.appium/node_modules/appium-uiautomator2-driver
+2022-06-08 17:03:08:038 [AppiumDriver@c91a] Appium v2.0.0-beta.27 creating new AndroidUiautomator2Driver (v2.2.0) session
+2022-06-08 17:03:08:038 [AppiumDriver@c91a] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+2022-06-08 17:03:08:038 [AppiumDriver@c91a] Appium's BaseDriver version is 8.3.1
+2022-06-08 17:03:08:038 [AppiumDriver@c91a] AndroidUiautomator2Driver's BaseDriver version is 8.5.3
+2022-06-08 17:03:08:049 [AndroidUiautomator2Driver@3614 (02214ff5)] Session created with session id: 02214ff5-6f5b-4cc3-8591-750feb4e95b8
+2022-06-08 17:03:08:050 [BaseDriver] Using local app '/Users/guruprasadsreenivasarao/Documents/OldDesktop/DDrive/AppiumWorkshop/AppiumWorkshop/Apps/VodQA.apk'
+2022-06-08 17:03:08:116 [ADB] Found 4 'build-tools' folders under '/Users/guruprasadsreenivasarao/Library/Android/sdk' (newest first):
+2022-06-08 17:03:08:116 [ADB]     /Users/guruprasadsreenivasarao/Library/Android/sdk/build-tools/33.0.0-rc4
+2022-06-08 17:03:08:116 [ADB]     /Users/guruprasadsreenivasarao/Library/Android/sdk/build-tools/33.0.0-rc2
+2022-06-08 17:03:08:116 [ADB]     /Users/guruprasadsreenivasarao/Library/Android/sdk/build-tools/32.1.0-rc1
+2022-06-08 17:03:08:117 [ADB]     /Users/guruprasadsreenivasarao/Library/Android/sdk/build-tools/32.0.0
+2022-06-08 17:03:08:117 [ADB] Using 'adb' from '/Users/guruprasadsreenivasarao/Library/Android/sdk/platform-tools/adb'
+2022-06-08 17:03:08:137 [AndroidDriver] Retrieving device list
+2022-06-08 17:03:08:156 [AndroidDriver] Using device: emulator-5554
+2022-06-08 17:03:08:170 [ADB] Using 'adb' from '/Users/guruprasadsreenivasarao/Library/Android/sdk/platform-tools/adb'
+2022-06-08 17:03:08:219 [ADB] Getting device platform version
+2022-06-08 17:03:08:250 [AndroidUiautomator2Driver@3614 (02214ff5)] Relaxing hidden api policy
+2022-06-08 17:03:08:364 [ADB] Package name: 'com.vodqareactnative'
+2022-06-08 17:03:08:364 [ADB] Main activity name: 'com.vodqareactnative.MainActivity'
+2022-06-08 17:03:08:933 [ADB] Using 'apksigner.jar' from '/Users/guruprasadsreenivasarao/Library/Android/sdk/build-tools/33.0.0-rc4/lib/apksigner.jar'
+2022-06-08 17:03:10:090 [ADB] '/Users/guruprasadsreenivasarao/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v5.6.2.apk' is signed with the default certificate
+2022-06-08 17:03:10:473 [ADB] '/Users/guruprasadsreenivasarao/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk' is signed with the default certificate
+2022-06-08 17:03:10:473 [AndroidUiautomator2Driver@3614 (02214ff5)] Server packages are not going to be (re)installed
+2022-06-08 17:03:10:519 [ADB] Adding packages ["io.appium.settings","io.appium.uiautomator2.server","io.appium.uiautomator2.server.test"] to Doze whitelist
+2022-06-08 17:03:11:616 [ADB] '/Users/guruprasadsreenivasarao/Documents/OldDesktop/DDrive/AppiumWorkshop/AppiumWorkshop/Apps/VodQA.apk' is signed with a non-default certificate
+2022-06-08 17:03:11:694 [AndroidDriver] Performing fast reset on 'com.vodqareactnative'
+2022-06-08 17:03:12:008 [ADB] com.vodqareactnative contains no permissions available for granting
+2022-06-08 17:03:12:123 [AndroidUiautomator2Driver@3614 (02214ff5)] Starting UIAutomator2 server 5.6.2
+2022-06-08 17:03:12:124 [AndroidUiautomator2Driver@3614 (02214ff5)] Using UIAutomator2 server from '/Users/guruprasadsreenivasarao/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v5.6.2.apk' and test from '/Users/guruprasadsreenivasarao/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk'
+2022-06-08 17:03:12:124 [AndroidUiautomator2Driver@3614 (02214ff5)] Waiting up to 30000ms for UiAutomator2 to be online...
+2022-06-08 17:03:12:147 [AndroidUiautomator2Driver@3614 (02214ff5)] socket hang up
+2022-06-08 17:03:13:155 [AndroidUiautomator2Driver@3614 (02214ff5)] socket hang up
+2022-06-08 17:03:14:316 [AndroidUiautomator2Driver@3614 (02214ff5)] Determined the downstream protocol as 'W3C'
+2022-06-08 17:03:14:402 [AndroidDriver] Screen already unlocked, doing nothing
+2022-06-08 17:03:14:403 [AndroidUiautomator2Driver@3614 (02214ff5)] Starting 'com.vodqareactnative/com.vodqareactnative.MainActivity and waiting for 'com.vodqareactnative/com.vodqareactnative.MainActivity'
+2022-06-08 17:03:15:160 [AppiumDriver@c91a] New AndroidUiautomator2Driver session created successfully, session 02214ff5-6f5b-4cc3-8591-750feb4e95b8 added to master session list
+2022-06-08 17:03:15:162 [HTTP] <-- POST /session 200 7129 ms - 1130
+2022-06-08 17:03:15:162 [HTTP] 
+2022-06-08 17:03:15:247 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/appium/settings
+2022-06-08 17:03:15:248 [HTTP] {"settings":{"keyInjectionDelay":500}}
+2022-06-08 17:03:15:264 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/appium/settings 200 16 ms - 14
+2022-06-08 17:03:15:264 [HTTP] 
+2022-06-08 17:03:15:283 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element
+2022-06-08 17:03:15:284 [HTTP] {"using":"class name","value":"android.widget.Button"}
+2022-06-08 17:03:15:465 [AndroidUiautomator2Driver@3614 (02214ff5)] Got response with status 404: {"sessionId":"572b9861-b4fa-48a8-9082-1cf5d9d24129","value":{"error":"no such element","message":"An element could not be located on the page using the given search parameters","stacktrace":"io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:70)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:267)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:261)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:68)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+2022-06-08 17:03:15:471 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element 404 188 ms - 540
+2022-06-08 17:03:15:471 [HTTP] 
+2022-06-08 17:03:15:987 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element
+2022-06-08 17:03:15:987 [HTTP] {"using":"class name","value":"android.widget.Button"}
+2022-06-08 17:03:16:706 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element 200 718 ms - 137
+2022-06-08 17:03:16:706 [HTTP] 
+2022-06-08 17:03:16:711 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element/00000000-0000-0124-ffff-ffff00000011/click
+2022-06-08 17:03:16:711 [HTTP] {"id":"00000000-0000-0124-ffff-ffff00000011"}
+2022-06-08 17:03:16:778 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element/00000000-0000-0124-ffff-ffff00000011/click 200 67 ms - 14
+2022-06-08 17:03:16:778 [HTTP] 
+2022-06-08 17:03:16:782 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element
+2022-06-08 17:03:16:782 [HTTP] {"using":"-android uiautomator","value":"textStartsWith(\"Photo View\")"}
+2022-06-08 17:03:16:846 [AndroidUiautomator2Driver@3614 (02214ff5)] Got response with status 404: {"sessionId":"572b9861-b4fa-48a8-9082-1cf5d9d24129","value":{"error":"no such element","message":"An element could not be located on the page using the given search parameters","stacktrace":"io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:70)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:267)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:261)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:68)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+2022-06-08 17:03:16:847 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element 404 65 ms - 540
+2022-06-08 17:03:16:847 [HTTP] 
+2022-06-08 17:03:17:354 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element
+2022-06-08 17:03:17:354 [HTTP] {"using":"-android uiautomator","value":"textStartsWith(\"Photo View\")"}
+2022-06-08 17:03:17:987 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element 200 633 ms - 137
+2022-06-08 17:03:17:987 [HTTP] 
+2022-06-08 17:03:17:990 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element/00000000-0000-0124-ffff-ffff000000ba/click
+2022-06-08 17:03:17:990 [HTTP] {"id":"00000000-0000-0124-ffff-ffff000000ba"}
+2022-06-08 17:03:18:041 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element/00000000-0000-0124-ffff-ffff000000ba/click 200 50 ms - 14
+2022-06-08 17:03:18:041 [HTTP] 
+2022-06-08 17:03:18:044 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element
+2022-06-08 17:03:18:044 [HTTP] {"using":"-android uiautomator","value":"textStartsWith(\"Photo Screen\")"}
+2022-06-08 17:03:18:082 [AndroidUiautomator2Driver@3614 (02214ff5)] Got response with status 404: {"sessionId":"572b9861-b4fa-48a8-9082-1cf5d9d24129","value":{"error":"no such element","message":"An element could not be located on the page using the given search parameters","stacktrace":"io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:70)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:267)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:261)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:68)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+2022-06-08 17:03:18:083 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element 404 39 ms - 540
+2022-06-08 17:03:18:083 [HTTP] 
+2022-06-08 17:03:18:590 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element
+2022-06-08 17:03:18:590 [HTTP] {"using":"-android uiautomator","value":"textStartsWith(\"Photo Screen\")"}
+2022-06-08 17:03:19:122 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element 200 532 ms - 137
+2022-06-08 17:03:19:122 [HTTP] 
+2022-06-08 17:03:19:125 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element
+2022-06-08 17:03:19:125 [HTTP] {"using":"class name","value":"android.widget.ImageView"}
+2022-06-08 17:03:19:146 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/element 200 21 ms - 137
+2022-06-08 17:03:19:146 [HTTP] 
+2022-06-08 17:03:19:152 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/execute/sync
+2022-06-08 17:03:19:152 [HTTP] {"script":"mobile: pinchCloseGesture","args":[{"elementId":"00000000-0000-0124-ffff-ffff000000cb","percent":0.5,"speed":750}]}
+2022-06-08 17:03:19:154 [AndroidUiautomator2Driver@3614 (02214ff5)] Executing native command 'mobile: pinchCloseGesture'
+2022-06-08 17:03:19:809 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/execute/sync 200 656 ms - 14
+2022-06-08 17:03:19:809 [HTTP] 
+2022-06-08 17:03:19:812 [HTTP] --> POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/execute/sync
+2022-06-08 17:03:19:813 [HTTP] {"script":"mobile: longClickGesture","args":[{"elementId":"00000000-0000-0124-ffff-ffff000000cb","duration":5000}]}
+2022-06-08 17:03:19:813 [AndroidUiautomator2Driver@3614 (02214ff5)] Executing native command 'mobile: longClickGesture'
+2022-06-08 17:03:24:863 [HTTP] <-- POST /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8/execute/sync 200 5050 ms - 14
+2022-06-08 17:03:24:863 [HTTP] 
+2022-06-08 17:03:24:876 [HTTP] --> DELETE /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8
+2022-06-08 17:03:24:877 [HTTP] {}
+2022-06-08 17:03:24:877 [AppiumDriver@c91a] Removing session 02214ff5-6f5b-4cc3-8591-750feb4e95b8 from our master session list
+2022-06-08 17:03:24:999 [AndroidUiautomator2Driver@3614 (02214ff5)] Restoring hidden api policy to the device default configuration
+2022-06-08 17:03:25:155 [HTTP] <-- DELETE /session/02214ff5-6f5b-4cc3-8591-750feb4e95b8 200 277 ms - 14
+2022-06-08 17:03:25:155 [HTTP] 
+2022-06-08 17:03:41:652 [Appium] Received SIGINT - shutting down
