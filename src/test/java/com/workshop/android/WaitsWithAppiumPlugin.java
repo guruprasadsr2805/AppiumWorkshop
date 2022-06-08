@@ -1,6 +1,7 @@
 package com.workshop.android;
 
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.Setting;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
@@ -15,8 +16,12 @@ import java.time.Duration;
 
 public class WaitsWithAppiumPlugin {
 
-    private String APP_URL = "https://github.com/cloudgrey-io/the-app/releases/download/v1.10.0/TheApp-v1.10.0.apk";
-
+    /*
+    Before running this test, make sure that we install the appium-wait-plugin.
+    Please run the below command to install the plugin
+    appium plugin install --source=npm appium-wait-plugin
+    https://github.com/AppiumTestDistribution/appium-wait-plugin
+     */
     private String AUTH_USER = "alice";
     private String AUTH_PASS = "mypassword";
 
@@ -62,8 +67,9 @@ public class WaitsWithAppiumPlugin {
             capabilities.setCapability("appium:adbExecTimeout", 70000);
             capabilities.setCapability("appium:automationName", "UiAutomator2");
             capabilities.setCapability("appium:autoGrantPermissions", true);
-            capabilities.setCapability("appium:app", APP_URL);
+            capabilities.setCapability("appium:app", "https://github.com/cloudgrey-io/the-app/releases/download/v1.10.0/TheApp-v1.10.0.apk");
             driver = new AndroidDriver(service.getUrl(), capabilities);
+            driver.setSetting(Setting.KEY_INJECTION_DELAY, 500);
             wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         } catch (Exception e) {
 

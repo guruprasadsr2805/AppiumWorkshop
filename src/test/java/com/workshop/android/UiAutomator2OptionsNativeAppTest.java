@@ -3,27 +3,28 @@ package com.workshop.android;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.Setting;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.net.URL;
 import java.time.Duration;
 import java.util.List;
 
-public class StartAppiumServerViaCode {
+public class UiAutomator2OptionsNativeAppTest {
 
     private AppiumDriverLocalService service;
     public AndroidDriver driver;
 
     /*
-        Setting up desired capabilities to launch the VodQA app on the real device / emulator
+        Setting up UiAutomator2Options capabilities to launch the VodQA app on the real device / emulator
     */
 
     @BeforeSuite
@@ -40,17 +41,15 @@ public class StartAppiumServerViaCode {
             if (service == null || !service.isRunning()) {
                 throw new RuntimeException("An appium server node is not started!");
             } else {
-                DesiredCapabilities capabilities = new DesiredCapabilities();
-                capabilities.setCapability("appium:newCommandTimeout", 900000);
-                capabilities.setCapability("appium:adbExecTimeout", 70000);
-                capabilities.setCapability("appium:automationName", "UiAutomator2");
-                capabilities.setCapability("appium:autoGrantPermissions", true);
-                capabilities.setCapability("appium:app", System.getProperty("user.dir") + "/Apps/VodQA.apk");
-
-                driver = new AndroidDriver(service.getUrl(), capabilities);
+                UiAutomator2Options uiAutomator2Options = new UiAutomator2Options()
+                        .autoGrantPermissions()
+                        .setNewCommandTimeout(Duration.ofMillis(20000))
+                        .setAdbExecTimeout(Duration.ofMillis(20000))
+                        .setApp(System.getProperty("user.dir") + "/Apps/VodQA.apk");
+                driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), uiAutomator2Options);
                 driver.setSetting(Setting.KEY_INJECTION_DELAY, 500);
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             }
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         } catch (Exception e) {
             e.printStackTrace();
         }
