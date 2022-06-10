@@ -92,11 +92,7 @@ public class GesturesViaW3CActionsAPI {
     public void verticalSwipeTest() throws InterruptedException {
         wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.className("android.widget.Button"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.accessibilityId("verticalSwipe"))).click();
-        verticalSwipe("android.widget.ScrollView");
-    }
-
-    private void verticalSwipe(String locator) throws InterruptedException {
-        Point source = driver.findElement(AppiumBy.className(locator)).getLocation();
+        Point source = driver.findElement(AppiumBy.className("android.widget.ScrollView")).getLocation();
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         Sequence sequence = new Sequence(finger, 1);
         sequence.addAction(finger.createPointerMove(ofMillis(0),
