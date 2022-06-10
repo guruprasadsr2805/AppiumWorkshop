@@ -22,6 +22,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.net.URL;
 import java.time.Duration;
+import java.util.HashMap;
 
 public class MobileGesturesTest {
 
@@ -36,8 +37,6 @@ public class MobileGesturesTest {
             service = new AppiumServiceBuilder()
                     .usingPort(4723)
                     .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
-                    .withArgument(GeneralServerFlag.LOG_LEVEL, "info")
-                    .withLogFile(new File("./Appium_Server_Log.txt"))
                     .build();
             service.start();
 
@@ -64,6 +63,28 @@ public class MobileGesturesTest {
     }
 
     /*
+    Test to perform the click gesture
+ */
+    @Test
+    public void performClickGesture() {
+        try {
+            wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.className("android.widget.Button")));
+
+            WebElement elementToClick = driver.findElement(AppiumBy.className("android.widget.Button"));
+
+            HashMap<String,String> elementMap = new HashMap<String,String>();
+            elementMap.put("elementId", ((RemoteWebElement) elementToClick).getId());
+
+            ((JavascriptExecutor) driver).executeScript("mobile: clickGesture", elementMap);
+
+            wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.androidUIAutomator("text(\"Samples List\")")));
+            driver.findElement(AppiumBy.androidUIAutomator("text(\"Back\")")).click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*
         Test to perform the double click gesture
      */
     @Test
@@ -75,9 +96,10 @@ public class MobileGesturesTest {
 
             WebElement elementToDoubleClick = driver.findElement(AppiumBy.androidUIAutomator("textStartsWith(\"Double Tap Me\")"));
 
-            ((JavascriptExecutor) driver).executeScript("mobile: doubleClickGesture", ImmutableMap.of(
-                    "elementId", ((RemoteWebElement) elementToDoubleClick).getId()
-            ));
+            HashMap<String,String> elementMap = new HashMap<String,String>();
+            elementMap.put("elementId", ((RemoteWebElement) elementToDoubleClick).getId());
+
+            ((JavascriptExecutor) driver).executeScript("mobile: doubleClickGesture", elementMap);
 
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.id("android:id/alertTitle")));
 
@@ -114,27 +136,6 @@ public class MobileGesturesTest {
             Assert.assertEquals(driver.findElement(AppiumBy.id("android:id/button1")).getText(), "OK");
 
             driver.findElement(AppiumBy.id("android:id/button1")).click();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /*
-        Test to perform the click gesture
-     */
-    @Test
-    public void performClickGesture() {
-        try {
-            wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.className("android.widget.Button")));
-
-            WebElement elementToClick = driver.findElement(AppiumBy.className("android.widget.Button"));
-
-            ((JavascriptExecutor) driver).executeScript("mobile: clickGesture", ImmutableMap.of(
-                    "elementId", ((RemoteWebElement) elementToClick).getId()
-            ));
-
-            wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.androidUIAutomator("text(\"Samples List\")")));
-            driver.findElement(AppiumBy.androidUIAutomator("text(\"Back\")")).click();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -184,7 +185,7 @@ public class MobileGesturesTest {
             ((JavascriptExecutor) driver).executeScript("mobile: pinchOpenGesture", ImmutableMap.of(
                     "elementId", ((RemoteWebElement) elementToZoomIn).getId(),
                     "percent", 0.50,
-                    "speed", 750
+                    "speed", 100
             ));
 
             Thread.sleep(5000);
@@ -209,7 +210,7 @@ public class MobileGesturesTest {
             ((JavascriptExecutor) driver).executeScript("mobile: pinchCloseGesture", ImmutableMap.of(
                     "elementId", ((RemoteWebElement) elementToZoomOut).getId(),
                     "percent", 0.50,
-                    "speed", 750
+                    "speed", 100
             ));
         } catch (Exception e) {
             e.printStackTrace();

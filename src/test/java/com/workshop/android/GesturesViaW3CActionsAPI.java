@@ -42,8 +42,6 @@ public class GesturesViaW3CActionsAPI {
             service = new AppiumServiceBuilder()
                     .usingPort(4723)
                     .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
-                    .withArgument(GeneralServerFlag.LOG_LEVEL, "info")
-                    .withLogFile(new File("./Appium_Server_Log.txt"))
                     .build();
             service.start();
 
