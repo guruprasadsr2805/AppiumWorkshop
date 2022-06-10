@@ -54,8 +54,6 @@ public class MobileGesturesTest {
         try {
             UiAutomator2Options uiAutomator2Options = new UiAutomator2Options()
                     .autoGrantPermissions()
-                    .setNewCommandTimeout(Duration.ofMillis(900000))
-                    .setAdbExecTimeout(Duration.ofMillis(900000))
                     .setApp(System.getProperty("user.dir") + "/Apps/VodQA.apk");
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), uiAutomator2Options);
             driver.setSetting(Setting.KEY_INJECTION_DELAY, 500);
@@ -66,19 +64,19 @@ public class MobileGesturesTest {
     }
 
     /*
-        Test to perform the double tap gesture
+        Test to perform the double click gesture
      */
     @Test
-    public void performDoubleTapGesture() {
+    public void performDoubleClickGesture() {
         try {
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.className("android.widget.Button"))).click();
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.androidUIAutomator("textStartsWith(\"Double Tap\")"))).click();
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.androidUIAutomator("textStartsWith(\"Double Tap Demo\")")));
 
-            WebElement elementToDoubleTap = driver.findElement(AppiumBy.androidUIAutomator("textStartsWith(\"Double Tap Me\")"));
+            WebElement elementToDoubleClick = driver.findElement(AppiumBy.androidUIAutomator("textStartsWith(\"Double Tap Me\")"));
 
             ((JavascriptExecutor) driver).executeScript("mobile: doubleClickGesture", ImmutableMap.of(
-                    "elementId", ((RemoteWebElement) elementToDoubleTap).getId()
+                    "elementId", ((RemoteWebElement) elementToDoubleClick).getId()
             ));
 
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.id("android:id/alertTitle")));
@@ -94,19 +92,19 @@ public class MobileGesturesTest {
     }
 
     /*
-        Test to perform the long press gesture
+        Test to perform the long click gesture
      */
     @Test
-    public void performLongPressGesture() {
+    public void performLongClickGesture() {
         try {
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.className("android.widget.Button"))).click();
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.androidUIAutomator("textStartsWith(\"Long Press\")"))).click();
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.androidUIAutomator("textStartsWith(\"Long Press Demo\")")));
 
-            WebElement elementToLongPress = driver.findElement(AppiumBy.androidUIAutomator("text(\"Long Press Me\")"));
+            WebElement elementToLongClick = driver.findElement(AppiumBy.androidUIAutomator("text(\"Long Press Me\")"));
 
             ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", ImmutableMap.of(
-                    "elementId", ((RemoteWebElement) elementToLongPress).getId(), "duration", 2000
+                    "elementId", ((RemoteWebElement) elementToLongClick).getId(), "duration", 2000
             ));
 
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.id("android:id/alertTitle")));
@@ -122,17 +120,17 @@ public class MobileGesturesTest {
     }
 
     /*
-        Test to perform the tap gesture
+        Test to perform the click gesture
      */
     @Test
-    public void performTapGesture() {
+    public void performClickGesture() {
         try {
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.className("android.widget.Button")));
 
-            WebElement elementToTap = driver.findElement(AppiumBy.className("android.widget.Button"));
+            WebElement elementToClick = driver.findElement(AppiumBy.className("android.widget.Button"));
 
             ((JavascriptExecutor) driver).executeScript("mobile: clickGesture", ImmutableMap.of(
-                    "elementId", ((RemoteWebElement) elementToTap).getId()
+                    "elementId", ((RemoteWebElement) elementToClick).getId()
             ));
 
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.androidUIAutomator("text(\"Samples List\")")));

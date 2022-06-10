@@ -32,13 +32,12 @@ public class DeepLinkDemo {
     public void setup() {
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("appium:newCommandTimeout", 900000);
-            capabilities.setCapability("appium:adbExecTimeout", 70000);
             capabilities.setCapability("appium:automationName", "UiAutomator2");
             capabilities.setCapability("appium:autoGrantPermissions", true);
             capabilities.setCapability("appium:app", System.getProperty("user.dir") + "/Apps/TheApp-v1.10.0.apk");
             capabilities.setCapability("appium:noReset", false);
             capabilities.setCapability("appium:fullReset", true);
+            capabilities.setCapability("appium:appWaitForLaunch", false);
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), capabilities);
 
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -54,19 +53,15 @@ public class DeepLinkDemo {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
             driver.get("theapp://login/" + AUTH_USER + "/" + AUTH_PASS);
             Thread.sleep(2000);
-            //wait.until(ExpectedConditions.presenceOfElementLocated(getLoggedInBy(AUTH_USER)));
-            //Assert.assertEquals(driver.findElement(getLoggedInBy(AUTH_USER)).getText(),
-            //        "You are logged in as " + AUTH_USER);
+            wait.until(ExpectedConditions.presenceOfElementLocated(getLoggedInBy(AUTH_USER)));
+            Assert.assertEquals(driver.findElement(getLoggedInBy(AUTH_USER)).getText(),
+                    "You are logged in as " + AUTH_USER);
+//            takeLocalScreenshot("DemoScreenShot");
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
-    }
-
-    private void takeLocalScreenshot(String imageName) throws IOException {
-        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("failureScreenshots/" + imageName + ".png"));
     }
 
     public By getLoggedInBy(String username) {
@@ -75,6 +70,11 @@ public class DeepLinkDemo {
     /*
         Killing the driver and ending the session
      */
+
+    private void takeLocalScreenshot(String imageName) throws IOException {
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile, new File("failureScreenshots/" + imageName + ".png"));
+    }
 
     @AfterSuite
     public void tearDown() {

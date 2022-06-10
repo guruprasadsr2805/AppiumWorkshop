@@ -1,12 +1,10 @@
 package com.workshop.android;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.Setting;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
@@ -18,7 +16,7 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.List;
 
-public class UiAutomator2OptionsNativeAppTest {
+public class UiAutomator2OptionsStartingAppiumServerViaCodeNativeAppTest {
 
     private AppiumDriverLocalService service;
     public AndroidDriver driver;
@@ -33,8 +31,6 @@ public class UiAutomator2OptionsNativeAppTest {
             service = new AppiumServiceBuilder()
                     .usingPort(4723)
                     .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
-                    .withArgument(GeneralServerFlag.LOG_LEVEL, "info")
-                    .withLogFile(new File("./Appium_Server_Log.txt"))
                     .build();
             service.start();
 
@@ -47,7 +43,6 @@ public class UiAutomator2OptionsNativeAppTest {
                         .setAdbExecTimeout(Duration.ofMillis(20000))
                         .setApp(System.getProperty("user.dir") + "/Apps/VodQA.apk");
                 driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), uiAutomator2Options);
-                driver.setSetting(Setting.KEY_INJECTION_DELAY, 500);
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             }
         } catch (Exception e) {
