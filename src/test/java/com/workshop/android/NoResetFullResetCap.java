@@ -1,6 +1,5 @@
 package com.workshop.android;
 
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -8,7 +7,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -16,7 +14,6 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.net.URL;
 import java.time.Duration;
-import java.util.Map;
 
 public class NoResetFullResetCap {
     public AndroidDriver driver;
