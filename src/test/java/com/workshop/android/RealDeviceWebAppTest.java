@@ -1,6 +1,6 @@
 package com.workshop.android;
 
-import io.appium.java_client.AppiumBy;
+import io.appium.java_client.Setting;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -30,6 +30,7 @@ public class RealDeviceWebAppTest {
             capabilities.setCapability("appium:autoGrantPermissions", true);
             capabilities.setCapability("browserName", "Chrome");
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), capabilities);
+            driver.setSetting(Setting.KEY_INJECTION_DELAY, 500);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         } catch (Exception e) {
             e.printStackTrace();
